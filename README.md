@@ -14,3 +14,5 @@ Below android components have been used in this project:
 5. Koin dependency injection.
 
 This project has been implemented in kotlin
+
+Testcases have been written for presentation and data layer using expresso and junit.
