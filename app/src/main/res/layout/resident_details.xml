@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.learn.residentapp.view.ResidentActivity">
+
+    <data>
+        <variable
+            name="residentViewModel"
+            type="com.learn.residentapp.viewmodel.ResidentViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/name"
+                android:textSize="@dimen/normal_text"
+                android:textStyle="bold"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <EditText
+                android:id="@+id/nameValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="@dimen/normal_text"
+                android:text="@={residentViewModel.name}"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.6"
+                app:layout_constraintLeft_toRightOf="@+id/name"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/birthDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:text="@string/birth_date"
+                android:textSize="@dimen/normal_text"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.4"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name"/>
+
+            <EditText
+                android:id="@+id/birthDateValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.6"
+                android:textSize="@dimen/normal_text"
+                android:text="@={residentViewModel.birthDate}"
+                app:layout_constraintTop_toBottomOf="@+id/nameValue"
+                app:layout_constraintLeft_toRightOf="@+id/birthDate"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
